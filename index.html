@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Âme de Paris | Guide Culturel et Historique</title>
+    <meta name="description" content="Explorez l'histoire, l'art et les monuments emblématiques de Paris. Un guide complet sur la culture parisienne, du Louvre aux cabarets mythiques.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-accent: #0B2545; /* Королевский синий */
+            --primary-gold: #CDA434; /* Бронзовое золото */
+            --primary-navy: #13315C;
+            --bg-cream: #faf7f2;
+            --bg-white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-gray: #555555;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Плавная прокрутка для всех ссылок */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Lora', serif;
+            font-weight: 700;
+            color: var(--primary-accent);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--primary-accent);
+            color: white;
+            box-shadow: 0 4px 15px rgba(11, 37, 69, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-navy);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(11, 37, 69, 0.3);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-accent);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-gold);
+            color: white;
+        }
+
+        /* Заголовки секций */
+        .section-title {
+            text-align: center;
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+            color: var(--primary-accent);
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.15rem;
+            margin-bottom: 3.5rem;
+            color: var(--text-gray);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 10px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--primary-accent);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--primary-accent);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Hero Section с SVG-паттерном вместо фото */
+        .hero {
+            background-color: var(--primary-accent);
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23cda434' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: white;
+            padding: 140px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4.2rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #e0e0e0;
+            font-weight: 300;
+        }
+
+        /* Карточки с SVG иконками */
+        .features {
+            padding: 90px 0;
+            background-color: var(--bg-cream);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            padding: 40px 30px;
+            text-align: center;
+            border-top: 4px solid var(--primary-gold);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 20px;
+            fill: none;
+            stroke: var(--primary-accent);
+            stroke-width: 1.5;
+            transition: stroke 0.3s;
+        }
+
+        .feature-card:hover .feature-icon {
+            stroke: var(--primary-gold);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Главные секции (Монументы) */
+        .attractions {
+            padding: 100px 0;
+            background-color: var(--bg-white);
+        }
+
+        .attraction-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 100px;
+        }
+
+        .attraction-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .attraction-text {
+            flex: 1;
+        }
+
+        .attraction-visual {
+            flex: 1;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-cream);
+            border-radius: 20px;
+            box-shadow: 15px 15px 0 var(--primary-gold);
+            transition: all 0.3s ease;
+        }
+
+        .attraction-row:hover .attraction-visual {
+            transform: scale(1.02);
+            box-shadow: 20px 20px 0 var(--primary-accent);
+        }
+
+        .attraction-svg {
+            width: 60%;
+            height: 60%;
+            stroke: var(--primary-accent);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .attraction-text h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .attraction-link {
+            color: var(--primary-accent);
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--primary-accent);
+            padding-bottom: 3px;
+        }
+
+        /* Footer */
+        footer {
+            background: #081a30;
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h4 {
+            color: var(--primary-gold);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media (max-width: 968px) {
+            .hero h1 { font-size: 2.8rem; }
+            .attraction-row, .attraction-row:nth-child(even) {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .attraction-visual { box-shadow: none; height: 250px; width: 100%; }
+            .attraction-row:hover .attraction-visual { box-shadow: none; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    L'Âme de Paris
+                </div>
+                <div class="nav-links">
+                    <a href="#histoire">Histoire</a>
+                    <a href="#monuments">Monuments</a>
+                    <a href="#gastronomie">Art de Vivre</a>
+                </div>
+                <a href="#footer" class="btn btn-outline">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Plongez dans l'Histoire de Paris</h1>
+            <p>Découvrez la capitale française à travers ses monuments légendaires, son art incomparable et son atmosphère intellectuelle. Un voyage au cœur de la culture européenne.</p>
+            <a href="#monuments" class="btn btn-primary">Commencer l'Exploration</a>
+        </div>
+    </section>
+
+    <section class="features" id="histoire">
+        <div class="container">
+            <h2 class="section-title">Les Piliers de la Culture</h2>
+            <p class="section-subtitle">Paris n'est pas seulement une ville, c'est un musée à ciel ouvert où chaque ruelle raconte une histoire fascinante.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24">
+                        <path d="M3 21h18" />
+                        <path d="M5 21V7l8-4 8 4v14" />
+                        <path d="M9 10v11" />
+                        <path d="M15 10v11" />
+                    </svg>
+                    <h3>Architecture Impériale</h3>
+                    <p>Du style gothique de l'Île de la Cité aux grands boulevards du baron Haussmann, l'urbanisme parisien est une référence mondiale.</p>
+                </div>
+
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24">
+                        <path d="M12 18.5A6.5 6.5 0 0 0 18.5 12A6.5 6.5 0 0 0 12 5.5A6.5 6.5 0 0 0 5.5 12A6.5 6.5 0 0 0 12 18.5Z" />
+                        <path d="M12 2a10 10 0 1 0 10 10" />
+                        <path d="M16 12a4 4 0 0 0-4-4" />
+                    </svg>
+                    <h3>Révolution Artistique</h3>
+                    <p>Lieu de naissance de l'impressionnisme et refuge des avant-gardes, Paris a toujours été le centre névralgique de la création.</p>
+                </div>
+
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24">
+                        <path d="M12 20h9" />
+                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                    </svg>
+                    <h3>Vie de Bohème</h3>
+                    <p>Découvrez l'âme des quartiers historiques comme Montmartre, où littérature et philosophie se rencontrent depuis des siècles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="attractions" id="monuments">
+        <div class="container">
+            <div class="attraction-row">
+                <div class="attraction-text">
+                    <h3>La Tour Eiffel: Un Chef-d'œuvre de Fer</h3>
+                    <p>Construite pour l'Exposition Universelle de 1889 par Gustave Eiffel, cette structure de 330 mètres a d'abord été critiquée par les artistes de l'époque avant de devenir le symbole incontesté de la France.</p>
+                    <p>Véritable prouesse technique du 19e siècle, elle témoigne du génie industriel français et de l'âge d'or des grandes constructions métalliques.</p>
+                </div>
+                <div class="attraction-visual">
+                    <svg class="attraction-svg" viewBox="0 0 24 24">
+                        <path d="M12 2l-1 5h2l-1-5z" />
+                        <path d="M11 7l-2 15h6l-2-15" />
+                        <path d="M7 14h10" />
+                        <path d="M5 22h14" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="attraction-row">
+                <div class="attraction-text">
+                    <h3>Le Louvre: Du Palais Royal au Musée</h3>
+                    <p>Avant d'abriter la Joconde, le Louvre fut une forteresse médiévale, puis la résidence principale des Rois de France. C'est à la Révolution Française que le palais devient un musée pour le peuple.</p>
+                    <p>Aujourd'hui, il abrite plus de 35 000 œuvres couvrant 9 000 ans d'histoire humaine, protégées par la célèbre pyramide de verre de I.M. Pei ajoutée en 1989.</p>
+                </div>
+                <div class="attraction-visual">
+                    <svg class="attraction-svg" viewBox="0 0 24 24">
+                        <path d="M2 22l10-18 10 18H2z" />
+                        <path d="M12 11l5 11" />
+                        <path d="M12 11l-5 11" />
+                        <path d="M6 18h12" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="gastronomie" style="background-color: var(--bg-white);">
+        <div class="container">
+            <h2 class="section-title">L'Art de Vivre Parisien</h2>
+            <p class="section-subtitle">La culture du café et la haute gastronomie font partie intégrante du patrimoine immatériel de la capitale.</p>
+            
+            <div class="attraction-row" style="margin-bottom: 0;">
+                <div class="attraction-visual">
+                    <svg class="attraction-svg" viewBox="0 0 24 24">
+                        <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                        <path d="M6 1v3" />
+                        <path d="M10 1v3" />
+                        <path d="M14 1v3" />
+                    </svg>
+                </div>
+                <div class="attraction-text">
+                    <h3>La Culture des Terrasses</h3>
+                    <p>Les cafés de Paris, du Café de Flore aux Deux Magots, ont été les bureaux des plus grands écrivains et philosophes comme Sartre, Hemingway et Camus. S'asseoir en terrasse, c'est participer à un rituel parisien séculaire.</p>
+                    <a href="#histoire" class="attraction-link">Retour à l'histoire &uarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>L'Âme de Paris</h4>
+                    <p style="color: #999; line-height: 1.6;">
+                        Projet éducatif et culturel dédié à la préservation et à la promotion de l'histoire parisienne. Explorez le patrimoine avec nous.
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#histoire">L'Histoire</a></li>
+                        <li><a href="#monuments">L'Architecture</a></li>
+                        <li><a href="#gastronomie">La Culture Café</a></li>
+                        <li><a href="#top">Haut de page</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Légal & Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">Politique de Confidentialité</a></li>
+                        <li><a href="mailto:contact@amedeparis.com">contact@amedeparis.com</a></li>
+                        <li><a href="tel:0148879406">0 14 88 79 406</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2026 L'Âme de Paris. Site à but informatif et culturel.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
